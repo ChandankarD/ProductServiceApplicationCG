@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.product.product_dashboard_service.entity.Product;
 
-@FeignClient(name="productservice", path="/basePath/v1/products")
+@FeignClient(name="productservice", path="/basePath/v1/products", fallback= ProductClientFallback.class)
 public interface ProductClient {
 
 	@GetMapping("/getallproducts")

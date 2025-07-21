@@ -19,6 +19,7 @@ public class ProductDashboardController {
 	
 	@GetMapping("/products")
 	public List<Product> getProductFromService(){
+		//using circuit breaker here 
 		return productClient.getAllProducts();
 	}
 }
